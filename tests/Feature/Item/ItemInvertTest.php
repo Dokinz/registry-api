@@ -1,6 +1,6 @@
 <?php
 
-namespace Item;
+namespace Tests\Feature\Item;
 
 use App\Models\Item;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,7 +21,7 @@ class ItemInvertTest extends TestCase
         $this->assertDatabaseHas('items', ['name' => 'red', 'is_inverted' => true]);
         $this->assertDatabaseHas('items', ['name' => 'blue', 'is_inverted' => false]);
     }
-    
+
     public function test_double_invert_returns_items_to_original_state(): void
     {
         Item::create(['name' => 'red', 'is_inverted' => false]);
